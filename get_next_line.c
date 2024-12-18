@@ -25,6 +25,11 @@ char    *read_line(int fd, char *line)
     return (line);
 }
 
+char    *new_line(char *line)
+{
+
+}
+
 char	*get_next_line(int fd)
 {
     static char     *line;
@@ -35,4 +40,5 @@ char	*get_next_line(int fd)
     line = ft_read_line(fd, line);
     if (!line)
         return (NULL);
+    
 }
