@@ -9,4 +9,10 @@
 # include <unistd.h>
 # include <fcntl.h>
 
+size_t    ft_strlen(char *str);
+char    *ft_strchr(char *str, int c);
+
+char    *read_line(int fd, char *line);
+char	*get_next_line(int fd);
+
 # endif

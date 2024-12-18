@@ -1,13 +1,18 @@
 #include "get_next_line.h"
 
+//read until end of file or \n
 char    *read_line(int fd, char *line)
 {
     ssize_t read_byte;
+    char    *buffer;
 
+    buffer = (char *)malloc(BUFFER_SIZE + 1);
+    if (!buffer)
+        return (NULL);
     read_byte = 1;
-    while (/* condition */)
+    while (!(ft_strchr(line, '\n')) && read_byte > 0)
     {
-        /* code */
+        
     }
        return(line);
 }
