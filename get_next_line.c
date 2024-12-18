@@ -12,9 +12,17 @@ char    *read_line(int fd, char *line)
     read_byte = 1;
     while (!(ft_strchr(line, '\n')) && read_byte > 0)
     {
-        
+        read_byte = read(fd, buffer, BUFFER_SIZE);
+        if (read_byte == -1)
+        {
+            free (buffer);
+            return (NULL);
+        }
+        buffer[read_byte] = '\0';
+        line = ft_strjoin(line, buffer);
     }
-       return(line);
+    free (buffer);
+    return (line);
 }
 
 char	*get_next_line(int fd)
