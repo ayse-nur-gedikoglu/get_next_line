@@ -25,9 +25,59 @@ char    *read_line(int fd, char *line)
     return (line);
 }
 
+//This function takes the characters read after the \n character with the buffer and adds them to the str char array.
 char    *new_line(char *line)
 {
+    char    *str;
+    int     i;
+    int     j;
 
+    i = 0;
+    while (line[i] && line[i] != '\n')
+        i++;
+    if (!line[i])
+    {
+        free (line);
+        return (NULL);
+    }
+    str = (char *)malloc(sizeof(char) * (ft_strlen(line) - i + 1));
+    if (!str)
+        return (NULL);
+    i++;
+    j = 0;
+    while (line[i] != '\0') 
+        str[j++]=line[i++];
+    str[j] = '\0';
+    free (line);
+    return (str);    
+}
+
+char    *ft_get_next_line(char *line)
+{
+    int     i;
+    char    *str;
+
+    i = 0;
+    if (!line[i])
+        return (NULL);
+    while (line[i] && line[i] != '\n')
+        i++;
+    str = (char *)malloc(i + 2);
+    if (!str)
+        return (NULL);
+    i = 0;
+    while (line [i] && line [i] != '\n')
+    {
+        str [i] = line[i];
+        i++;
+    }
+    if (line [i] == '\n')
+    {
+        str[i] = line[i];
+        i++;
+    }
+    str[i] = '\0';
+    return (str);
 }
 
 char	*get_next_line(int fd)
@@ -40,5 +90,7 @@ char	*get_next_line(int fd)
     line = ft_read_line(fd, line);
     if (!line)
         return (NULL);
+    next_line = ft_get_next_line(line);
+    
     
 }
