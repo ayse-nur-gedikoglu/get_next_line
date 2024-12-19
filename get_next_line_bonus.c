@@ -1,6 +1,5 @@
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
-//read until end of file or \n
 char    *read_line(int fd, char *line)
 {
     ssize_t read_byte;
@@ -25,7 +24,6 @@ char    *read_line(int fd, char *line)
     return (line);
 }
 
-//This function takes the characters read after the \n character with the buffer and adds them to the str char array.
 char    *new_line(char *line)
 {
     char    *str;
@@ -52,8 +50,6 @@ char    *new_line(char *line)
     return (str);    
 }
 
-//The ft_get_next_line function retrieves the first line from a given array of lines. It retrieves the line up to an
-//including the first newline character (\n) and returns this part as a new string.
 char    *ft_get_next_line(char *line)
 {
     int     i;
@@ -84,14 +80,15 @@ char    *ft_get_next_line(char *line)
 
 char	*get_next_line(int fd)
 {
-    static char     *line;
-    char            *next_line;
+	static char			*line[1024];
+	char				*next_line;
 
-    if (fd < 0 || BUFFER_SIZE <= 0)
-        return (NULL);
-    line = ft_read_line(fd, line);
-    if (!line)
-        return (NULL);
-    next_line = ft_get_next_line(line);
-    line = new_line(line);
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	line[fd] = ft_get_line(fd, line[fd]);
+	if (!line[fd])
+		return (NULL);
+	next_line = ft_get_next_line(line[fd]);
+	line[fd] = new_line(line[fd]);
+	return (next_line);
 }
