@@ -83,7 +83,7 @@ char	*get_next_line(int fd)
 	static char			*line[1024];
 	char				*next_line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 1024)
 		return (NULL);
 	line[fd] = ft_get_line(fd, line[fd]);
 	if (!line[fd])
