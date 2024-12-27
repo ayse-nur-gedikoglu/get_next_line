@@ -247,6 +247,8 @@ Bu durumda:
 
 ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/c9ce9a1c-7f90-4920-af7c-ca1a927b914d/1e2b5dd3-7541-45d0-a6b2-ccc2cf2bdf16/image.png)
 
+![image](https://github.com/user-attachments/assets/bab9409d-2acf-46f7-97c8-04aedbb79095)
+
 Bu standart dosyaların bulunduğu yer.
 
 ### TTY – Teletypewriter
@@ -372,17 +374,17 @@ Eğer `line` başlangıçta `NULL` olarak ayarlanmazsa ve belirsiz bir değere s
 *Aslında bakacak olursanız biz bunu staticte direkt olarak eşitleyerek belirtiriz fakat zaten tüm değişkenler ilk adımda NULL olarak atanırlar.
 
 ### Ben aynı kodu çağırdığımda Static değişken tekrar Null’a eşitlenmez mi?
-
+```
 Hayır, `static` değişkenler, aynı kodu tekrar tekrar çağırdığınızda **başlangıçta tanımlanan değeri korur** ve **yeniden başlatılmaz**. Bu, `static` değişkenlerin önemli bir özelliğidir.
 
 ### **`static` Değişkenlerin Davranışı**
-
+```
 - **Fonksiyon içinde tanımlanan `static` değişkenler**, program çalışırken bir kez oluşturulur ve yaşam döngüsü programın tamamı boyunca devam eder.
 - Eğer bir `static` değişken bir fonksiyonun içinde tanımlanmışsa, fonksiyon çağrıldığında önceki değerini hatırlar ve aynı değeri kullanır.
 - Ancak, programın başlatıldığı sırada sadece bir kez varsayılan değere (örneğin, `NULL`) atanır.
 
 ## **Segmantation Fault Nedir?**
-
+```
 Segmentation fault (bazen “segmentation violation” olarak da adlandırılır) bir yazılım hatasıdır ve genellikle programın bellek hatası yaptığını gösterir. Bu hatanın oluştuğu durumlarda, programın bellekte izin verilmeyen bir alana erişmeye çalıştığı için oluşur.
 
 Segmentation Fault hataları :
@@ -395,7 +397,6 @@ Segmentation Fault hataları :
 
 ```c
 c
-Copy code
 int arr[5];
 arr[10] = 42; // arr dizisinin sınırları dışında!
 
@@ -406,7 +407,6 @@ arr[10] = 42; // arr dizisinin sınırları dışında!
 
 ```c
 c
-Copy code
 int *ptr = malloc(sizeof(int));
 free(ptr);
 *ptr = 10; // Serbest bırakılan bellek!
