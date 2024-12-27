@@ -101,10 +101,10 @@ char	*ft_get_next_line(char *line)
 
 char	*get_next_line(int fd)
 {
-	static char	*line[1024];
+	static char	*line[OPEN_MAX];
 	char		*next_line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > OPEN_MAX)
 		return (NULL);
 	line[fd] = read_buffered_line(fd, line[fd]);
 	if (!line[fd])
