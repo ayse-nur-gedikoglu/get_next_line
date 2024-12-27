@@ -372,7 +372,6 @@ Eğer `line` başlangıçta `NULL` olarak ayarlanmazsa ve belirsiz bir değere s
 *Aslında bakacak olursanız biz bunu staticte direkt olarak eşitleyerek belirtiriz fakat zaten tüm değişkenler ilk adımda NULL olarak atanırlar.
 
 ### Ben aynı kodu çağırdığımda Static değişken tekrar Null’a eşitlenmez mi?
-```
 Hayır, `static` değişkenler, aynı kodu tekrar tekrar çağırdığınızda **başlangıçta tanımlanan değeri korur** ve **yeniden başlatılmaz**. Bu, `static` değişkenlerin önemli bir özelliğidir.
 
 ### **`static` Değişkenlerin Davranışı**
@@ -382,7 +381,6 @@ Hayır, `static` değişkenler, aynı kodu tekrar tekrar çağırdığınızda *
 - Ancak, programın başlatıldığı sırada sadece bir kez varsayılan değere (örneğin, `NULL`) atanır.
 
 ## **Segmantation Fault Nedir?**
-```
 Segmentation fault (bazen “segmentation violation” olarak da adlandırılır) bir yazılım hatasıdır ve genellikle programın bellek hatası yaptığını gösterir. Bu hatanın oluştuğu durumlarda, programın bellekte izin verilmeyen bir alana erişmeye çalıştığı için oluşur.
 
 Segmentation Fault hataları :
