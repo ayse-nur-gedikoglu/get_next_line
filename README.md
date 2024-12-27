@@ -392,7 +392,6 @@ Segmentation Fault hataları :
 - ya da, farkında olmadan pointer adresini yanlış bir şeye yönlendirdiniz.
 - **Dizi Taşması (Buffer Overflow)**:
     - Bir dizinin sınırları dışında bir alana erişmeye çalışmak.
-
 ```c
 c
 int arr[5];
