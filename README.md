@@ -70,7 +70,7 @@ Burada, `path` parametresi açılacak dosyanın yolu ve adını içeren bir ka
 
 ---
 
-**en sık kullanılan `flags` parametreleri ve açıklamaları:**
+**En Sık Kullanılan `flags` Parametreleri ve Açıklamaları:**
 
 1. `O_RDONLY`: Dosyayı sadece okuma modunda açar. Dosyanın içeriği değiştirilemez, sadece okunabilir.
 2. `O_WRONLY`: Dosyayı sadece yazma modunda açar. Dosyanın içeriği okunamaz, sadece değiştirilebilir.
@@ -244,8 +244,6 @@ Bu durumda:
 - **Nereye bağlı?** Varsayılan olarak `/dev/tty` veya `/dev/pts/N` gibi terminal cihazlarına bağlıdır. Bu cihazlar sanal terminal veya fiziksel terminali temsil eder.
 
 ---
-
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/c9ce9a1c-7f90-4920-af7c-ca1a927b914d/1e2b5dd3-7541-45d0-a6b2-ccc2cf2bdf16/image.png)
 
 ![image](https://github.com/user-attachments/assets/bab9409d-2acf-46f7-97c8-04aedbb79095)
 
