@@ -53,7 +53,7 @@ char	*ft_strjoin(char *line, char *buffer)
 		return (NULL);
 	if (!line)
 	{
-		line = malloc(1);
+		line = malloc(sizeof(char) * 1);
 		line[0] = '\0';
 	}
 	i = -1;
